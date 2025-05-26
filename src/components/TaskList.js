@@ -13,6 +13,7 @@ function TaskList({ tasks, onEdit, onDelete }) {
     );
   }
 
+  // Group tasks by status
   const groupedTasks = tasks.reduce((groups, task) => {
     const status = task.status;
     if (!groups[status]) {
@@ -21,6 +22,12 @@ function TaskList({ tasks, onEdit, onDelete }) {
     groups[status].push(task);
     return groups;
   }, {});
+
+  // Sort by priority: high > medium > low
+  const sortByPriority = (tasks) => {
+    const order = { high: 0, medium: 1, low: 2 };
+    return [...tasks].sort((a, b) => order[a.priority] - order[b.priority]);
+  };
 
   const statusLabels = {
     'todo': 'To Do',
@@ -38,7 +45,7 @@ function TaskList({ tasks, onEdit, onDelete }) {
               {label} ({groupedTasks[status]?.length || 0})
             </h3>
             <div className="tasks">
-              {(groupedTasks[status] || []).map(task => (
+              {sortByPriority(groupedTasks[status] || []).map(task => (
                 <TaskItem
                   key={task.id}
                   task={task}
