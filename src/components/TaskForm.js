@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function TaskForm({ onSubmit }) {
+function TaskForm({ onSubmit, editingTask, onCancel }) {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -8,29 +8,69 @@ function TaskForm({ onSubmit }) {
     status: 'todo'
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.title.trim()) {
-      alert('Please enter a task title');
-      return;
-    }
-    onSubmit(formData);
+  useEffect(() => {
+  if (editingTask) {
+    setFormData({
+      title: editingTask.title,
+      description: editingTask.description,
+      priority: editingTask.priority,
+      status: editingTask.status
+    });
+  } else {
+    // Reset form jika selesai mengedit atau batal
     setFormData({
       title: '',
       description: '',
       priority: 'medium',
       status: 'todo'
     });
+  }
+}, [editingTask]);
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.title.trim()) {
+      alert('Please enter a task title');
+      return;
+    }
+
+    onSubmit(formData);
+
+    // Reset form if not editing
+    if (!editingTask) {
+      setFormData({
+        title: '',
+        description: '',
+        priority: 'medium',
+        status: 'todo'
+      });
+    }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleCancel = () => {
+    setFormData({
+      title: '',
+      description: '',
+      priority: 'medium',
+      status: 'todo'
+    });
+    onCancel();
   };
 
   return (
     <div className="task-form">
-      <h2>Add New Task</h2>
+      <h2>{editingTask ? 'Edit Task' : 'Add New Task'}</h2>
+
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="title">Task Title *</label>
@@ -78,7 +118,15 @@ function TaskForm({ onSubmit }) {
         </div>
 
         <div className="form-actions">
-          <button type="submit" className="btn btn-primary">Add Task</button>
+          <button type="submit" className="btn btn-primary">
+            {editingTask ? 'Update Task' : 'Add Task'}
+          </button>
+
+          {editingTask && (
+            <button type="button" className="btn btn-secondary" onClick={handleCancel}>
+              Cancel
+            </button>
+          )}
         </div>
       </form>
     </div>

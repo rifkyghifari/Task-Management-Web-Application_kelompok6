@@ -7,8 +7,13 @@ function TaskItem({ task, onEdit, onDelete }) {
     }
   };
 
-  const getPriorityClass = (priority) => `priority-${priority}`;
-  const getStatusClass = (status) => `status-${status}`;
+  const getPriorityClass = (priority) => {
+    return `priority-${priority}`;
+  };
+
+  const getStatusClass = (status) => {
+    return `status-${status}`;
+  };
 
   return (
     <div className={`task-item ${getPriorityClass(task.priority)} ${getStatusClass(task.status)}`}>
@@ -26,17 +31,9 @@ function TaskItem({ task, onEdit, onDelete }) {
       )}
 
       <div className="task-meta">
-        <label>
-          Status:
-          <select
-            value={task.status}
-            onChange={(e) => onEdit({ ...task, status: e.target.value })}
-          >
-            <option value="todo">To Do</option>
-            <option value="in-progress">In Progress</option>
-            <option value="done">Done</option>
-          </select>
-        </label>
+        <span className="task-status">
+          Status: {task.status.replace('-', ' ')}
+        </span>
         {task.createdAt && (
           <span className="task-date">
             Created: {new Date(task.createdAt).toLocaleDateString()}
