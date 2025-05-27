@@ -1,101 +1,25 @@
-# Task-Management-Web-Application
-<h2>Team 6</h2>
-<ul>
-  <li>Rifky Ghifari Siregar - 231112918</li>
-  <li>Indra Jeremia Tinambunan - 231112760</li>
-  <li>Carlos Dongoran - 231111859</li>
-</ul>
+# 📋 Task Management Web Application
 
-🟢 User Story 1 – Membuat Tugas
-Sebagai user,
-Saya ingin membuat tugas dengan judul dan prioritas,
-Agar saya dapat melacak pekerjaan saya.
+## 👥 Team 6
+- **Rifky Ghifari Siregar** - 231112918  
+- **Indra Jeremia Tinambunan** - 231112760  
+- **Carlos Dongoran** - 231111859  
 
-Acceptance Criteria:
-Ada form dengan field:
+---
 
-title (wajib diisi)
-description (opsional)
-priority (dropdown: Low, Medium, High)
-status (To-do, In-progress, Done)
-Ada tombol Save
-Task tersimpan dan langsung muncul di daftar
+## 🚀 Deskripsi Proyek
+Aplikasi manajemen tugas berbasis web yang dirancang untuk membantu pengguna dalam mengatur, memantau, dan menyelesaikan tugas sehari-hari menggunakan pendekatan user-friendly dan praktik agile seperti user story dan story point.
 
-📌 Story Point: 3
-📌 Prioritas: High
+---
 
+## ✅ User Stories
 
-🟡 User Story 2 – Melihat Daftar Tugas
-Sebagai user,
-Saya ingin melihat semua tugas dalam satu daftar,
-Agar saya dapat memantau pekerjaan saya.
-
-Acceptance Criteria:
-Menampilkan semua tugas dengan:
-
-Title
-Description
-Priority
-Status
-
-📌 Story Point: 1
-📌 Prioritas: Medium
-
-
-🟠 User Story 3 – Memperbarui Status Tugas
-Sebagai user,
-Saya ingin mengubah status tugas,
-Agar saya dapat melihat progres tugas saya.
-
-Acceptance Criteria:
-Status dapat diubah (To-do, In-progress, Done)
-
-Tampilan daftar memperlihatkan status saat ini
-
-📌 Story Point: 1
-📌 Prioritas: Low
-
-
-
-🟡 User Story 4 – Mengurutkan Berdasarkan Prioritas
-Sebagai user,
-Saya ingin daftar tugas diurutkan berdasarkan prioritas,
-Agar saya bisa melihat tugas penting terlebih dahulu.
-
-Acceptance Criteria:
-Urutan: High → Medium → Low
-
-Default priority adalah "Medium" bila tidak dipilih
-
-📌 Story Point: 2
-📌 Prioritas: Medium
-
-
-🟠 User Story 5 – Menandai Tugas Selesai
-Sebagai user,
-Saya ingin menandai tugas sebagai selesai,
-Agar saya tahu mana tugas yang sudah saya kerjakan.
-
-Acceptance Criteria:
-Bisa mengganti status menjadi "Done"
-
-Tampilan status terlihat (label atau warna berbeda)
-
-📌 Story Point: 1
-📌 Prioritas: Low
-
-
-
-🟡 User Story 6 – Menghapus Tugas
-Sebagai user,
-Saya ingin menghapus tugas,
-Agar daftar saya tetap bersih dan relevan.
-
-Acceptance Criteria:
-Ada tombol "Delete" di tiap task
-
-Tugas terhapus dari daftar dan disimpan
-
-📌 Story Point: 1
-📌 Prioritas: Medium
+| No | User Story | Acceptance Criteria | Story Point | Prioritas |
+|----|------------|---------------------|-------------|-----------|
+| 🟢 1 | **Membuat Tugas**<br>_Sebagai user, saya ingin membuat tugas dengan judul dan prioritas, agar saya dapat melacak pekerjaan saya._ | - Form dengan field:<br> &nbsp;&nbsp;• title (wajib)<br> &nbsp;&nbsp;• description (opsional)<br> &nbsp;&nbsp;• priority (Low, Medium, High)<br> &nbsp;&nbsp;• status (To-do, In-progress, Done)<br> - Tombol Save tersedia<br> - Tugas muncul di daftar | 3 | High |
+| 🟡 2 | **Melihat Daftar Tugas**<br>_Sebagai user, saya ingin melihat semua tugas dalam satu daftar, agar saya dapat memantau pekerjaan saya._ | - Menampilkan semua tugas dengan:<br> &nbsp;&nbsp;• Title<br> &nbsp;&nbsp;• Description<br> &nbsp;&nbsp;• Priority<br> &nbsp;&nbsp;• Status | 1 | Medium |
+| 🟠 3 | **Memperbarui Status Tugas**<br>_Sebagai user, saya ingin mengubah status tugas, agar saya dapat melihat progres tugas saya._ | - Status bisa diubah (To-do, In-progress, Done)<br> - Tampilan menunjukkan status saat ini | 1 | Low |
+| 🟡 4 | **Mengurutkan Berdasarkan Prioritas**<br>_Sebagai user, saya ingin daftar tugas diurutkan berdasarkan prioritas, agar saya bisa melihat tugas penting terlebih dahulu._ | - Urutan: High → Medium → Low<br> - Default priority: Medium jika tidak dipilih | 2 | Medium |
+| 🟠 5 | **Menandai Tugas Selesai**<br>_Sebagai user, saya ingin menandai tugas sebagai selesai, agar saya tahu mana tugas yang sudah saya kerjakan._ | - Status bisa diganti menjadi Done<br> - Tampilan status terlihat (label atau warna berbeda) | 1 | Low |
+| 🟡 6 | **Menghapus Tugas**<br>_Sebagai user, saya ingin menghapus tugas, agar daftar saya tetap bersih dan relevan._ | - Ada tombol Delete di tiap tugas<br> - Tugas dihapus dari daftar dan data disimpan | 1 | Medium |
 
